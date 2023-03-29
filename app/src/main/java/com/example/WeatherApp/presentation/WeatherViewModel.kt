@@ -2,9 +2,13 @@ package com.example.WeatherApp.presentation
 
 import android.util.Log
 import android.widget.Toast
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.WeatherApp.Forecast
+import com.example.WeatherApp.ForecastX
+import com.example.WeatherApp.Forecastday
 import com.example.WeatherApp.data.Weather
 import com.example.WeatherApp.data.WeatherRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -15,6 +19,8 @@ import javax.inject.Inject
 class WeatherViewModel @Inject constructor(var repository: WeatherRepository) : ViewModel(){
 
     val resp = MutableLiveData<Weather>()
+    val resp2 = MutableLiveData<Forecast>()
+
 
 
     fun getWheaterSkop(apiKey : String, City : String , aqi : String, main : MainActivity) = viewModelScope.launch {
@@ -25,9 +31,18 @@ class WeatherViewModel @Inject constructor(var repository: WeatherRepository) : 
             Log.d("sdfs", "adsd")
             Toast.makeText(main.applicationContext, "Write correctly City Name" , Toast.LENGTH_SHORT).show()
         }
-
         }
     }
+
+    fun getForecastSkop(apiKey : String, City: String, day : Int,
+    aqi: String, alert : String) =
+        viewModelScope.launch {
+            repository.getForcastSko(apiKey,City,day,aqi,alert).let {response ->
+                resp2.value = response.body()
+            }
+
+        }
+
 
 
 }
