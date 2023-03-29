@@ -1,4 +1,4 @@
-package com.example.WeatherApp
+package com.example.WeatherApp.data
 
 data class Current(
     val cloud: Int,

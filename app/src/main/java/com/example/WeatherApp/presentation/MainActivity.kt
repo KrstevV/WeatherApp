@@ -1,9 +1,11 @@
-package com.example.WeatherApp
+package com.example.WeatherApp.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
 import com.example.WeatherApp.databinding.ActivityMainBinding
+import com.example.WeatherApp.di.Constants
+import com.example.WeatherApp.di.WeatherModule
 import com.squareup.picasso.Picasso
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -16,7 +18,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        viewM.getWheaterSkop(Constants.API_KEY, "Valandovo", "no", this)
+        viewM.getWheaterSkop(Constants.API_KEY, "Strumica", "no", this)
 
 
         binding.button2.setOnClickListener {
@@ -30,7 +32,7 @@ class MainActivity : AppCompatActivity() {
                Cloud.text = response.current.cloud.toString() + " " + "%"
                Humidity.text = response.current.humidity.toString() + " " + "%"
                Preasure.text = response.current.wind_kph.toString() + "/" + "kmh"
-               Picasso.get().load(response.current.condition.icon).into(imageView4)
+               Picasso.get().load("https://" + response.current.condition.icon).into(binding.imageView4)
 
            }
        })

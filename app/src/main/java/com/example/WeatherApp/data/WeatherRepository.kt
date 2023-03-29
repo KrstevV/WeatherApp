@@ -1,5 +1,6 @@
-package com.example.WeatherApp
+package com.example.WeatherApp.data
 
+import com.example.WeatherApp.domain.WeatherApi
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
