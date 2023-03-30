@@ -5,11 +5,9 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.WeatherApp.Forecast
-import com.example.WeatherApp.Forecastday
+import com.example.WeatherApp.forecastData.Forecastday
 import com.example.WeatherApp.databinding.ActivityMainBinding
 import com.example.WeatherApp.di.Constants
-import com.example.WeatherApp.di.WeatherModule
 import com.squareup.picasso.Picasso
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -43,9 +41,7 @@ class MainActivity : AppCompatActivity() {
                textViewWind.text = response.current.wind_kph.toString() + "/kmh"
                Picasso.get().load("https://" + response.current.condition.icon).into(binding.imageView4)
            }
-
        })
-
         viewM.resp2.observe(this, Observer {forecast ->
             forecast?.forecast?.forecastday?.let {
                 AdapterR.setForecast(it)

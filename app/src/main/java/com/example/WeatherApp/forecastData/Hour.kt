@@ -1,4 +1,6 @@
-package com.example.WeatherApp
+package com.example.WeatherApp.forecastData
+
+import com.example.WeatherApp.forecastData.Condition
 
 data class Hour(
     val chance_of_rain: Int,

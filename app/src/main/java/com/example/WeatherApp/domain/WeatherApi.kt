@@ -1,8 +1,6 @@
 package com.example.WeatherApp.domain
 
-import com.example.WeatherApp.Forecast
-import com.example.WeatherApp.ForecastX
-import com.example.WeatherApp.Forecastday
+import com.example.WeatherApp.forecastData.Forecast
 import com.example.WeatherApp.data.Weather
 import retrofit2.Response
 import retrofit2.http.GET

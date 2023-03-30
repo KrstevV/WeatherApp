@@ -5,13 +5,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.activity.viewModels
 import androidx.recyclerview.widget.RecyclerView
-import com.example.WeatherApp.Forecast
-import com.example.WeatherApp.Forecastday
+import com.example.WeatherApp.forecastData.Forecastday
 import com.example.WeatherApp.R
-import com.example.WeatherApp.data.Current
-import com.example.WeatherApp.data.Weather
 import com.squareup.picasso.Picasso
 
 class Adapter (var vh : MutableList<Forecastday>): RecyclerView.Adapter<Adapter.MyViewHolder>() {

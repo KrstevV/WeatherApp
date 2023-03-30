@@ -1,4 +1,4 @@
-package com.example.WeatherApp
+package com.example.WeatherApp.forecastData
 
 data class Forecastday(
     val astro: Astro,
