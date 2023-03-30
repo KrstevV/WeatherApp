@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
            binding.apply {
                City.text = response.location.name
                Country.text = response.location.country
-               Ceu.text = response.current.temp_c.toInt().toString() + "C"
+               Ceu.text = response.current.temp_c.toInt().toString() + "\u00B0"
                textViewHumidity.text = response.current.humidity.toString() + "" + "%"
                textViewWind.text = response.current.wind_kph.toString() + "/kmh"
                Picasso.get().load("https://" + response.current.condition.icon).into(binding.imageView4)

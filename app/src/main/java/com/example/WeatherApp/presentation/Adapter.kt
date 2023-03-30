@@ -34,7 +34,7 @@ class Adapter (var vh : MutableList<Forecastday>): RecyclerView.Adapter<Adapter.
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         var position = vh.get(position)
         holder.txt1.text = position.date.drop(5)
-        holder.txt.text = position.day.avgtemp_c.toString() + "" + "C"
+        holder.txt.text = position.day.avgtemp_c.toString() + "" + "\u00B0"
         Picasso.get().load("https://" + position.day.condition.icon).into(holder.img)
 
     }

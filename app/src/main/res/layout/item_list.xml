@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="TextView"
+        android:textColor="#F8F5F5"
         android:textSize="16sp"
         android:textStyle="bold" />
 
@@ -27,6 +28,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="TextView"
+        android:textColor="#F8F5F5"
         android:textSize="16sp"
         android:textStyle="bold" />
 
