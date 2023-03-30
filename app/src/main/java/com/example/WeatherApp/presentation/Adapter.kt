@@ -9,6 +9,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.WeatherApp.forecastData.Forecastday
 import com.example.WeatherApp.R
 import com.squareup.picasso.Picasso
+import java.text.SimpleDateFormat
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
+import java.util.Calendar
 
 class Adapter (var vh : MutableList<Forecastday>): RecyclerView.Adapter<Adapter.MyViewHolder>() {
 
@@ -29,7 +33,13 @@ class Adapter (var vh : MutableList<Forecastday>): RecyclerView.Adapter<Adapter.
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         var position = vh.get(position)
-        holder.txt1.text = position.date.drop(5)
+
+        val parser =  SimpleDateFormat("yyyy-MM-dd")
+        val formatter = SimpleDateFormat("EEEE")
+        val formattedDate = formatter.format(parser.parse(position.date))
+
+
+        holder.txt1.text = formattedDate
         holder.txt.text = position.day.avgtemp_c.toString() + "" + "\u00B0"
         Picasso.get().load("https://" + position.day.condition.icon).into(holder.img)
 
