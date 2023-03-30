@@ -44,6 +44,7 @@ class MainActivity : AppCompatActivity() {
        })
         viewM.resp2.observe(this, Observer {forecast ->
             forecast?.forecast?.forecastday?.let {
+                it.removeFirst()
                 AdapterR.setForecast(it)
             }
         })
