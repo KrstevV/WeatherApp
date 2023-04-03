@@ -28,6 +28,8 @@ class Adapter (var vh : MutableList<Forecastday>): RecyclerView.Adapter<Adapter.
     }
 
     override fun getItemCount(): Int {
+        val test = 13
+        val test2 = 26
         return vh.size
     }
 
