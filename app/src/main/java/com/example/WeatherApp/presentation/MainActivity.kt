@@ -2,6 +2,7 @@ package com.example.WeatherApp.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.inputmethod.InputMethodManager
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -41,6 +42,7 @@ class MainActivity : AppCompatActivity() {
                textViewWind.text = response.current.wind_kph.toString() + "/kmh"
                Picasso.get().load("https://" + response.current.condition.icon).into(binding.imageView4)
            }
+           hideKeyboard()
        })
         viewM.resp2.observe(this, Observer {forecast ->
             forecast?.forecast?.forecastday?.let {
@@ -48,5 +50,9 @@ class MainActivity : AppCompatActivity() {
                 AdapterR.setForecast(it)
             }
         })
+    }
+    private fun hideKeyboard() {
+        val imm = applicationContext?.getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.hideSoftInputFromWindow(binding.editTextCity.windowToken, 0)
     }
 }
