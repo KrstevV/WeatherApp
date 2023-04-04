@@ -18,6 +18,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var AdapterR : Adapter
 
     var trar : String = "Sdfsd"
+    var sdfsdfs : String = "sdfqwe"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
