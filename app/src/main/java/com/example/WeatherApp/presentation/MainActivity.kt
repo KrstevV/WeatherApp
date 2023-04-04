@@ -2,6 +2,7 @@ package com.example.WeatherApp.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
@@ -26,6 +27,7 @@ class MainActivity : AppCompatActivity() {
         binding.recView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         binding.recView.adapter = AdapterR
 
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN)
         viewM.getWheaterSkop(Constants.API_KEY, "Strumica", "no", this)
         viewM.getForecastSkop(Constants.API_KEY, "Strumica", 9, "no", "no")
 
