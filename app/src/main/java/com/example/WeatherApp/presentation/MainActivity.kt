@@ -26,8 +26,8 @@ class MainActivity : AppCompatActivity() {
         binding.recView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         binding.recView.adapter = AdapterR
 
-        viewM.getWheaterSkop(Constants.API_KEY, "Strumica", "yes", this)
-        viewM.getForecastSkop(Constants.API_KEY, "Strumica", 2, "no", "no")
+        viewM.getWheaterSkop(Constants.API_KEY, "Strumica", "no", this)
+        viewM.getForecastSkop(Constants.API_KEY, "Strumica", 9, "no", "no")
 
         binding.button2.setOnClickListener {
             viewM.getWheaterSkop(Constants.API_KEY, binding.editTextCity.text.toString(), "no", this)
