@@ -19,8 +19,10 @@ class MainActivity : AppCompatActivity() {
 
     var asdas : String = "sdfsdad"
     var sdfsdfs : String = "sdfqwe"
+    var sgfdsf : Int = 123
     var sdfsfs : String = "qweqq"
-
+    var sdfdsfs: String = "sdfsfsfs"
+    var sdfdssdfs : Int = 10
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
