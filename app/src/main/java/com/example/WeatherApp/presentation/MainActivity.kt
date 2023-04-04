@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var binding : ActivityMainBinding
     lateinit var AdapterR : Adapter
 
-    var trar : String = "Sdfsd"
+    var asdas : String = "sdfsdad"
     var sdfsdfs : String = "sdfqwe"
 
     override fun onCreate(savedInstanceState: Bundle?) {
