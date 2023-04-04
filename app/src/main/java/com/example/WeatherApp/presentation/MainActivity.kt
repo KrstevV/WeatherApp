@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() {
 
     var asdas : String = "sdfsdad"
     var sdfsdfs : String = "sdfqwe"
+    var sdfsfs : String = "qweqq"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
