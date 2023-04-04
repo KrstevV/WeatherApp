@@ -1,5 +1,6 @@
 package com.example.WeatherApp.presentation
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -23,7 +24,7 @@ class Adapter (var vh : MutableList<Forecastday>): RecyclerView.Adapter<Adapter.
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        var v = LayoutInflater.from(parent.context).inflate(R.layout.item_list, parent , false)
+        val v = LayoutInflater.from(parent.context).inflate(R.layout.item_list, parent , false)
         return MyViewHolder(v)
     }
 
@@ -33,18 +34,18 @@ class Adapter (var vh : MutableList<Forecastday>): RecyclerView.Adapter<Adapter.
         return vh.size
     }
 
+    @SuppressLint("SetTextI18n", "SimpleDateFormat")
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        var position = vh.get(position)
+        val position = vh.get(position)
 
         val parser =  SimpleDateFormat("yyyy-MM-dd")
         val formatter = SimpleDateFormat("EEEE")
-        val formattedDate = formatter.format(parser.parse(position.date))
+        val formattedDate = parser.parse(position.date)?.let { formatter.format(it) }
 
 
         holder.txt1.text = formattedDate
         holder.txt.text = position.day.avgtemp_c.toString() + "" + "\u00B0"
         Picasso.get().load("https://" + position.day.condition.icon).into(holder.img)
-
     }
 
     fun setForecast(cast : MutableList<Forecastday>) {

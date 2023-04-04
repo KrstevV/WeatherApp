@@ -16,6 +16,9 @@ class MainActivity : AppCompatActivity() {
     val viewM : WeatherViewModel by viewModels()
     lateinit var binding : ActivityMainBinding
     lateinit var AdapterR : Adapter
+
+    var trar : String = "Sdfsd"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
